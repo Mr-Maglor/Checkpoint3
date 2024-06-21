@@ -70,8 +70,8 @@ Q.2.3.4
 - Formatez le nouveau volume via la commande suivante :  `mkfs -t ext4 /dev/cp3-vg/Sauvegarde `  
 ![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/903237d2-e461-4690-9432-553cfb9474ce)
 
-- Il faut ensuite montez le volume dans bareos, via la commande suivante :  `mount /dev/cp3-vg/Sauvegarde /var/lib/bareos/storage `
-Si aucun message d'erreur c'est que le montage a été effectué.
+- Il faut ensuite montez le volume dans bareos, via la commande suivante :  `mount /dev/cp3-vg/Sauvegarde /var/lib/bareos/storage `.  
+Si aucun message d'erreur ne s'affiche c'est que le montage a été effectué.
 
 - Modifidez ensuite le fichier fstab pour automatiser le montage :
 ![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/2f618186-bc6e-459e-9803-d813b4279b8f)  
