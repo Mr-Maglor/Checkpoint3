@@ -32,8 +32,7 @@ Via cette commande `usermod -aG root bruno `.
 
 ## Q.2.2.3 :
 
-- Sur un poste client générez une clé via la commande `ssh-keygen` puis l'envoyez vers le serveur via la commande suivante `ssh-copy-id user@IP_server` (remplacez les chmaps **user** et **IP_Server** avec vos informations)
-- Sur le serveur, modifiez ls lignes suivantes dans le fichier de configuraiton comme ceci  `PubkeyAuthentication Yes` et `PasswordAuthentication no`
+- Modifiez ls lignes suivantes dans le fichier de configuration comme ceci  `PubkeyAuthentication Yes` et `PasswordAuthentication no`
 ![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/52419cb0-50b6-401a-be77-fa5167179da2)
 
 - Tapez la commande suivante `systemctl restart sshd`, si il n'y a pas d'erreur cela veut dire que la commande a bien été prise en compte.  
