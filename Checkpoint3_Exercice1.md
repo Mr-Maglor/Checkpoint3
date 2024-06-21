@@ -3,7 +3,7 @@
 ## Q.1.1.1 :
 
 - Faire une recherche pour trouver Kelly Rhameur grâce à l'outil de recherche de l'Active Directory (Action puis find)
-- Allez dans l'onglet **Organization** de Kelly Rhameur pour trouver dans quelle OU elles situé :  
+- Allez dans l'onglet **Organization** de Kelly Rhameur pour trouver dans quelle OU elle est situé :  
 ![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/d94987ca-8fed-46b8-b721-0f7bca46c13f)
 
 - on voit quel appartient au département *Direction des Ressources Humaines*, donc elle sera dans l'OU *DirectionDesRessourcesHumaines*.  
