@@ -119,7 +119,7 @@ Les communications autorisée en entrée sont les suivantes :
 
 Q.2.5.3
 
-Tout les paquets non autorisée en entrée seront interdit plus quelque chose avec l'état *Invalid**
+Tout les paquets non autorisée en entrée seront interdit plus quelque chose avec l'état **Invalid**
 
 Q.2.5.4
 
