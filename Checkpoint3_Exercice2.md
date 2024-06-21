@@ -33,7 +33,62 @@ Via cette commande `usermod -aG root bruno `.
 ## Q.2.2.3 :
 
 - Sur un poste client générez une clé via la commande `ssh-keygen` puis l'envoyez vers le serveur via la commande suivante `ssh-copy-id user@IP_server` (remplacez les chmaps **user** et **IP_Server** avec vos informations)
-- Sur le serveur, modifiez ls lignes suivantes dans le fichier de configuraiton comme ceci  `PubkeyAuthentication Yes` et PasswordAuthentication no `
-![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/f560df33-5ea9-4bd7-8161-22800deb3a6d)
+- Sur le serveur, modifiez ls lignes suivantes dans le fichier de configuraiton comme ceci  `PubkeyAuthentication Yes` et `PasswordAuthentication no`
+![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/52419cb0-50b6-401a-be77-fa5167179da2)
+
 - Tapez la commande suivante `systemctl restart sshd`, si il n'y a pas d'erreur cela veut dire que la commande a bien été prise en compte.  
 ![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/dada448f-f7af-4fa8-b9e9-c218323da51e)
+
+
+# Partie 3 : Analyse du stockage :
+
+## Q.2.3.1 :
+
+Le ssystèmes de fichiers montées sont du EXT4, EXT2 et Swap
+![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/523834d2-adde-4f5a-a972-c2c12ac02921)
+
+## Q.2.3.2 :
+
+On a dur RAID1 et du LVM 
+![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/59200727-1f22-47e3-8432-f5256522f81b)
+
+Q.2.3.3 
+
+Le nouveau disque apparait sour le nom de sdb (utilisez la commande `lsblk`pour le vérifiez).  
+- Partionnez le nouveau disque dur via la commande `fdisk /dev/sdb` avec les options suivantes :  
+![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/1258f23e-d720-4feb-a195-e89f7643d6a2)
+
+- Ajoutez le nouveau disque au RAID via la commande suivante `mdadm --manage /dev/md0 --add /dev/sdb1` et tapez la commande `mdadm --detail /dev/md0`pour vérifiez que tout est correct et le RAID réparé.  
+![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/deec5ba6-8d99-4ffb-8ded-a3bbfb4f9751)  
+L'état affiche Clean tout est réparé.
+
+Q.2.3.4  
+
+- Il faut créer le nouveau volume via la commande suivante `lvcreate -n Sauvegarde -L 2g cp3-vg ` (Sauvegarde représente le nom du volume créée).  
+![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/79f9a099-a320-46bf-b9d8-856a57d00fc1)  
+
+- Formatez le nouveau volume via la commande suivante :  `mkfs -t ext4 /dev/cp3-vg/Sauvegarde `  
+![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/903237d2-e461-4690-9432-553cfb9474ce)
+
+- Il faut ensuite montez le volume dans bareos, via la commande suivante :  `mount /dev/cp3-vg/Sauvegarde /var/lib/bareos/storage `
+Si aucun message d'erreur c'est que le montage a été effectué.
+
+- Modifidez ensuite le fichier fstab pour automatiser le montage :
+![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/2f618186-bc6e-459e-9803-d813b4279b8f)  
+
+- Ensuite on envoie la commande `mount -a`pour vérifier qu'il n'y a pas d'érreurs.
+
+Q.2.3.5  
+
+On lance la commande `vgdisplay` et on voit qu'il reste 1.79 Go de libre.
+![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/0a995153-7e04-4673-b779-658cfbed247f)
+
+
+
+
+
+
+
+
+
+
