@@ -65,7 +65,7 @@
 - Allez dans les propriétés de l'utilsateur Gabriel Ghul, puis dans l'onglet **Account**.  
 - Selectionnez **Logon On To**.  
 - Selectionnez **The following Computer**  
-- Dans le champs de texte rentez **CLIENT01** et cliquez sur **Add*.  
+- Dans le champs de texte rentez **CLIENT01** et cliquez sur **Add**.  
 ![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/f74781f7-0c99-4720-bfc7-aa9532b49895)
 
 
