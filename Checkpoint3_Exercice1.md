@@ -71,11 +71,11 @@
 
 ## Q.1.2.3 :
 
-- Au préalable créez un groupe dans l'OU *LabUsers* via le menu **Action**, puis *New** et enfin *Group**.
+- Au préalable créez un groupe dans l'OU *LabUsers* via le menu **Action**, puis **New** et enfin **Group**.
 - Laissez les options par défaut et le nommez **GrpLabUser** :  
 ![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/54a8c0d8-fcfc-49f4-b8c5-3027ce079440)
 
-- Ensuite dans les Propriété de ce nouveau groupe, allez dans l'onglet **Members** et àjoutez tout les groupes principaux des OU principales (même methode que pour ajouter un mangager à un utilsiateur**) :  
+- Ensuite dans les Propriété de ce nouveau groupe, allez dans l'onglet **Members** et àjoutez tout les groupes principaux des OU principales (même methode que pour ajouter un mangager à un utilsiateur) :  
 ![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/8f5d7f1c-43c8-4947-81b4-7900ed07f5e8)
 
 - Via le **Server Manager** et le menu **Tools*.
