@@ -127,7 +127,7 @@
 ![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/fa68d4e2-dca2-4ee0-a972-043bbf4b185f)  
 
 - Fermer la fenêtre de cette GPO.  
-- Selectionnez **LabUser*, faites un clique droit et choisir **Link an Existing GPO**.  
+- Selectionnez **LabUser**, faites un clique droit et choisir **Link an Existing GPO**.  
 - Choisir **Drive-Mount**.  
 ![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/658d4e45-7bbe-4c86-93f0-f4949550e91c)  
 ![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/1af05c7a-a709-4401-949c-fce3ebc47037)  
