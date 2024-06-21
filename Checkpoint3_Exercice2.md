@@ -49,7 +49,7 @@ Le ssystèmes de fichiers montées sont du EXT4, EXT2 et Swap
 
 ## Q.2.3.2 :
 
-On a dur RAID1 et du LVM 
+On a du RAID1 et du LVM 
 ![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/59200727-1f22-47e3-8432-f5256522f81b)
 
 Q.2.3.3 
@@ -83,11 +83,58 @@ Q.2.3.5
 On lance la commande `vgdisplay` et on voit qu'il reste 1.79 Go de libre.
 ![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/0a995153-7e04-4673-b779-658cfbed247f)
 
+# Partie 4 : Sauvegardes :
+
+Q.2.4.1  
+
+Non prévu dans les choses à réviser pour le chekckoint 3. 
+![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/255ea6a7-fde5-4f88-90eb-cb38f0b9ffbe)
+![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/e1b14323-adbf-4688-b90d-ddc4f7057299)
+
+De plus je n'ai jamais réussit à faire ni la quête, ni l'atelier Bareos.
+Donc je ne peux répondre à cette question.
+
+# Partie 5 : Filtrage et analyse réseau
+
+Q.2.5.1
+
+- On voit les règles grâce à la commande suivante  `nft list ruleset`
+![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/770d19a3-f7d7-4fff-9d10-cc6ddb7c78ec)
+Les règles que je comprends sont les suivantes :
+-    Tout les paquets autre que ceux autorisé sont bloqué en entrée
+-    Procole ICMP autorisé en entrée (ping ipv4)
+-    Procole ICMP IPV6 autorisé en entrée (ping pipv6)
+-    Communication avec l'adresse loopback autorisée en entrée
+-    Port TCP 22 ouvert en Entrée
+-   je n'arrive pas à decripter les deux ligne suivantes :
+  ![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/b44f88c7-0eb2-43e5-bd10-0d7b134e36b7)  
+Je sais juste que ça accepte quelque chose avec un état **established** en entrée et refuse quelque chose avec un état **Invalid**.
 
 
+Q.2.5.2
 
+Les communications autorisée en entrée sont les suivantes :
+-  Protcol SSH via le port TCP 22
+-  ping en IPV4 et IPV6
 
+Q.2.5.3
 
+Tout les paquets non autorisée en entrée seront interdit plus quelque chose avec l'état *Invalid**
+
+Q.2.5.4
+
+En théorie les regles sont définis dans le fichier suivant : `/etc/nftables.conf` mais il est vide :
+![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/db7c2f50-756c-490c-bd53-c9e58fe9fd57)
+Donc cela veut dire qu'il y a un autre fichier de configuration qui prend la main sur le paramétrage de base de NFT Tables, mais impossible de savoir ou il est.
+En théorie il faut ajouter les règles suivantes dans la chaine suivante : `chain in_chain` et les placez à la fin après `ip6 nexthdr ipv6-icmp accept `
+- tcp dport 9101 accept
+- tcp dport 9102 accept
+- tcp dport 9103 accept
+
+# Partie 6 : Analyse de logs
+
+Q.2.6.1
+![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/b5333f1c-a306-4d03-9690-506d9418a172)
 
 
 
