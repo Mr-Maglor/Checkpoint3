@@ -7,7 +7,7 @@
 
 ## Q.2.1.2 :
 
-Tout dépend de que l'on veut en faire, mais si pour admnisitrer le serveur il serait interessant de l'ajouter au groupe Root.
+Tout dépend de que l'on veut en faire, mais si pour admnisitrer le serveur il serait interessant de l'ajouter au groupe Root.  
 Via cette commande `usermod -aG root bruno `.
 
 # Partie 2: Configuration de SSH :
