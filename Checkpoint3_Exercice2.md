@@ -125,12 +125,12 @@ Q.2.5.4
 
 En théorie les regles sont définis dans le fichier suivant : `/etc/nftables.conf` mais il est vide :
 ![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/db7c2f50-756c-490c-bd53-c9e58fe9fd57)
-Donc cela veut dire qu'il y a un autre fichier de configuration qui prend la main sur le paramétrage de base de NFT Tables, mais impossible de savoir ou il est.
+Donc cela veut dire qu'il y a un autre fichier de configuration qui prend la main sur le paramétrage de base de NFT Tables, mais impossible de savoir où il est.  
 En théorie il faut ajouter les règles suivantes dans la chaine suivante : `chain in_chain` et les placez à la fin après `ip6 nexthdr ipv6-icmp accept `
-- tcp dport 9101 accept
+```- tcp dport 9101 accept
 - tcp dport 9102 accept
 - tcp dport 9103 accept
-
+```
 # Partie 6 : Analyse de logs
 
 Q.2.6.1
