@@ -58,7 +58,7 @@ Le nouveau disque apparait sour le nom de sdb (utilisez la commande `lsblk`pour 
 ![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/1258f23e-d720-4feb-a195-e89f7643d6a2)
 
 - Ajoutez le nouveau disque au RAID via la commande suivante `mdadm --manage /dev/md0 --add /dev/sdb1`  
-- tapez la commande `mdadm --detail /dev/md0`pour vérifiez que tout est correct et le RAID réparé.  
+- Tapez la commande `mdadm --detail /dev/md0`pour vérifier que tout est correct et le RAID réparé.  
 ![image](https://github.com/Mr-Maglor/Checkpoint3/assets/159529274/deec5ba6-8d99-4ffb-8ded-a3bbfb4f9751)  
 L'état affiche Clean tout est réparé.
 
